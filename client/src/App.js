@@ -9,7 +9,7 @@ function App() {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = async function (event) {
-          const buffer = new Uint8Array(event.target.result);
+          const buffer = event.target.result;
           await axios.post('http://localhost:4040', buffer, {
             headers: {
               'Content-Type': 'application/octet-stream'
